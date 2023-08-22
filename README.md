@@ -127,21 +127,16 @@ This is the geth JavaScript console. Any command with the symbol > should be typ
 -->
 
 ## Built With <a name="built_with"></a>
-Mobile App:
-+ [Android Studio](https://developer.android.com/studio/) - Android app
-+ [NodeJs](https://nodejs.org/en/) - Server Environment
-+ [MySQL](https://dev.mysql.com/downloads/os-linux.html) - Database
+GUI App:
++ [Python GUI]([https://developer.android.com/studio/](https://docs.python.org/3/library/tkinter.html)) - GUI app
++ [MySQL]([https://dev.mysql.com/downloads/os-linux.html](https://pypi.org/project/pymysql/)) - Database for login/register
++ [qrcode]([https://pypi.org/project/qrcode/),[pyzbar](https://pypi.org/project/pyzbar/)) - creating and reading a dynamic QR code
+  
 
 Blockchain:
-+ [Ethereum](https://www.ethereum.org/) - Blockchain Network
-+ [Solidity](https://github.com/ethereum/solidity) - Smart Contracts
-+ [Remix](https://remix-ide.readthedocs.io/en/latest/) - Create private Ethereum blockchain to run tests
++ [Blockchain in python](activestate.com/blog/how-to-build-a-blockchain-in-python/) - Pre-built Runtime
 
-Website:
-+ HTML - Markup language for creating web pages
-+ CSS - Style Sheet Language
-+ JavaScript - Scripting Language for web pages
-+ Bootstrap - Templating
+
 
 ## Limitations <a name="limitations"></a>
 + The user needs to have a QR code scanner in order to check the product information.
@@ -149,10 +144,11 @@ Website:
 + We currently depend on the company to register with our services, without which, we cannot provide information about a brand to the user.
 
 ## Future Scope <a name="future_scope"></a>
++ Making an Android app on this architecture 
 + To track every genuine product that is to be sold.
 + Implement this idea in other fields.
 + Virtual transactions
 + Using tamper-proof tags
 + Dynamic (read & write NFC tags)
-+ QR codes which have secure graphic
-+ Implement our own tokens which can be sold to users so that they can purchase ownership of a product using tokens which helps in insurance processing. 
++ QR codes that have secure graphic
++ Implement our own tokens which can be sold to users so that they can purchase ownership of a product using tokens that helps in insurance processing. 
