@@ -128,9 +128,9 @@ This is the geth JavaScript console. Any command with the symbol > should be typ
 
 ## Built With <a name="built_with"></a>
 GUI App:
-+ [Python GUI]([https://developer.android.com/studio/](https://docs.python.org/3/library/tkinter.html)) - GUI app
-+ [MySQL]([https://dev.mysql.com/downloads/os-linux.html](https://pypi.org/project/pymysql/)) - Database for login/register
-+ [qrcode]([https://pypi.org/project/qrcode/),[pyzbar](https://pypi.org/project/pyzbar/)) - creating and reading a dynamic QR code
++ [Python GUI](https://docs.python.org/3/library/tkinter.html) - GUI app
++ [MySQL](https://pypi.org/project/pymysql/) - Database for login/register
++ [qrcode](https://pypi.org/project/qrcode/) ,[pyzbar](https://pypi.org/project/pyzbar/) - creating and reading a dynamic QR code
   
 
 Blockchain:
