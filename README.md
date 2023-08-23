@@ -134,7 +134,7 @@ GUI App:
   
 
 Blockchain:
-+ [Blockchain in python](activestate.com/blog/how-to-build-a-blockchain-in-python/) - Pre-built Runtime
++ [Blockchain in python](https://www.activestate.com/blog/how-to-build-a-blockchain-in-python/) - Pre-built Runtime
 
 
 
