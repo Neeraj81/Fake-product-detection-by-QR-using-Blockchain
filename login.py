@@ -10,7 +10,7 @@ class Login:
         self.root.title("Login form")
         self.root.geometry("1250x700+0+0")
         
-        self.bg=ImageTk.PhotoImage(file="bg/blk2.jpg",master=root)
+        self.bg=ImageTk.PhotoImage(file="bg//OIP.jpg",master=root)
         bg=Label(self.root,image=self.bg).place(x=0,y=0,relwidth=1,relheight=1)
         
         frame1=Frame(self.root,bg="white")
@@ -39,7 +39,7 @@ class Login:
             messagebox.showerror("Error","All fields are required",parent=self.root)
         else:
             try:
-                con=pymysql.connect(host="localhost",user="root",password="",database="user")
+                con=pymysql.connect(host="localhost",user="root",password="",database="abhinaya")
                 cur=con.cursor()
                 cur.execute("select *from user where email=%s and password=%s",(self.txt_email.get(),self.txt_password.get()))
                 row=cur.fetchone()
@@ -53,7 +53,7 @@ class Login:
                     import AdminMain
                 con.close()
             except Exception as em:
-                messagebox.showerror("Error",f"Error due to :{str(es)}",parent=self.root)
+                messagebox.showerror("Error",f"Error due to :{str(em)}",parent=self.root)
         
         
       

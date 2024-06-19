@@ -21,13 +21,13 @@ import threading
 
 
 main = tkinter.Tk()
-main.title("Fake Prodduct Identificaion With QR-Code Using BloackChain")
+main.title("Authentication of products-Counterfeit Elimination Using BlockChain")
 main.attributes('-fullscreen', True)
 #main.geometry('1300x1200')
 
-video_name = "bg\\home.mp4" #This is your video file path
-video = imageio.get_reader(video_name)
 
+video_name = "bg\\hii.jpg" #This is your video file path
+video = imageio.get_reader(video_name)
 def stream(label):
     for image in video.iter_data():
         frame_image = ImageTk.PhotoImage(PIL.Image.fromarray(image))
@@ -61,8 +61,8 @@ def addProduct():
     name = tf2.get()
     user = tf3.get()
     address = tf4.get()
-    neeraj=hex(random.getrandbits(128))
-    bytes=neeraj.encode('utf-8')
+    neer=hex(random.getrandbits(128))
+    bytes=neer.encode('utf-8')
     digital_signature = sha256(bytes).hexdigest();
     
     global QRimg
@@ -139,10 +139,11 @@ def searchProduct():
                     QRimg.save('original_barcodes'+'\\'+str(pid)+'productQR.png')
                     output = ''
                     text.insert(END,"Product Details extracted from Blockchain using Product ID : "+pid+"\n\n")
-                    text.insert(END,"Product ID                                         : "+arr[0]+"\n")
+                    text.insert(END,"Product ID                                 : "+arr[0]+"\n")
                     text.insert(END,"Product Name                               : "+arr[1]+"\n")
                     text.insert(END,"Company/User Details                       : "+arr[2]+"\n")
                     text.insert(END,"Address Details                            : "+arr[3]+"\n")
+					#text.insert(END,"hash code                                  : "+arr[4]+"\n")
                     text.insert(END,"Product Registered Date & Time             : "+arr[4]+"\n")
                     text.insert(END,"Product Qr Code                            : "+arr[5]+"\n")
 
@@ -182,8 +183,8 @@ def searchProduct():
 
 main.wm_attributes('-transparentcolor', '#ab23ff')
 font = ('times', 30, 'bold')
-title = Label(main, text='Fake Product Identificaion With QR-Code Using BlockChain')
-title.config(bg='black', fg='white')  
+title = Label(main, text='Authentication of products-Counterfeit Elimination Using BlockChain')
+title.config(bg="green",fg='black')  
 title.config(font=font)           
 title.config(height=3, width=50)       
 title.place(x=170,y=5)

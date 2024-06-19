@@ -1,0 +1,2 @@
+python AdminMain.py
+pause

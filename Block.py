@@ -1,4 +1,4 @@
-from hashlib import sha256
+from hashlib import sha256 #hash a message in encrypted format
 import json
 import time
 

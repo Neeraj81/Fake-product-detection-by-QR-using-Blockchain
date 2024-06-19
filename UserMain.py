@@ -1,8 +1,8 @@
 from tkinter import messagebox
 from tkinter import *
-from tkinter import simpledialog
+from tkinter import simpledialog #get the val of user
 import tkinter
-from tkinter import filedialog
+from tkinter import filedialog #help in dil handling...
 from tkinter.filedialog import askopenfilename
 from Block import *
 from Blockchain import *
@@ -19,21 +19,23 @@ from PIL import ImageTk, Image
 import PIL.Image
 import imageio
 import threading
-import qrtools
+import qrtools #generate qr
 from PIL import Image
-#from pyzbar.pyzbar import decode
-import pyzbar.pyzbar as pyzbar
+from pyzbar.pyzbar import decode
+import pyzbar.pyzbar as pyzbar #decode qr
+#from pyzbar.pyzbar import ZBarSymbol
+
 
 
 
 main = Tk()
-main.title("Fake Product Identificaion With QR-Code Using BlockChain")
+main.title("Authentication of products-Counterfeit Elimination Using BlockChain")
 main.attributes('-fullscreen', True)
 #main.geometry('1300x1200')
 
 
 
-video_name = "bg\\home.mp4" #This is your video file path
+video_name = "bg\\hii.jpg" #This is your video file path
 video = imageio.get_reader(video_name)
 
 def stream(label):
@@ -101,20 +103,30 @@ def authenticateProduct():
                 flag = False
                 break
     if flag:
+        o1=''
         text.insert(END,str(digital_signature)+",  this hash is not present in the blockchain \n")
-        text.insert(END,"Uploaded Product Barcode Authentication Failed")
+        text.insert(END,"Uploaded Product Barcode Authentication Failed: FAKE")
+        o1='<html><body><link rel="stylesheet" href="styles.css">'
+        o1+='<h1>FAKE PRODUCT!!</h1>'
+        o1+='</body></html>'
+        f = open("o1.html", "w")
+        f.write(o1)
+        f.close()
+        webbrowser.open("o1.html",new=1)
+
+
 
 
 def authenticateProductWeb():
     text.delete('1.0', END)
     cap = cv2.VideoCapture(0)
+    detector = cv2.QRCodeDetector()
     while True:
         _, frame = cap.read()
-        decodedObjects = pyzbar.decode(frame)
-        for obj in decodedObjects:
-            digital_signature_=obj.data
-            digital_signature=digital_signature_.decode("utf-8")
-            break
+        data, bbox, _ = detector.detectAndDecode(frame)
+        digital_signature=data
+        if digital_signature:
+	        break
         cv2.imshow("QR-Code scanner", frame)
         if cv2.waitKey(1) == ord("q"):
             break
@@ -149,8 +161,17 @@ def authenticateProductWeb():
                 flag = False
                 break
     if flag:
+        o1=''
         text.insert(END,str(digital_signature)+",  this hash is not present in the blockchain \n")
-        text.insert(END,"Uploaded Product Barcode Authentication Failed")
+        text.insert(END,"Uploaded Product Barcode Authentication Failed fake product")
+        text.insert(END,"Uploaded Product Barcode Authentication Failed: FAKE")
+        o1='<html><body><link rel="stylesheet" href="styles.css">'
+        o1+='<h1>FAKE PRODUCT!!</h1>'
+        o1+='</body></html>'
+        f = open("o1.html", "w")
+        f.write(o1)
+        f.close()
+        webbrowser.open("o1.html",new=1)
         
         
  
@@ -159,8 +180,8 @@ def authenticateProductWeb():
 
 main.wm_attributes('-transparentcolor', '#ab23ff')
 font = ('times', 30, 'bold')
-title = Label(main, text='Fake Product Identificaion With QR-Code Using BlockChain')
-title.config(bg='black', fg='white')  
+title = Label(main, text='Authentication of products-Counterfeit Elimination Using BlockChain')
+title.config(bg='green',fg='white')  
 title.config(font=font)           
 title.config(height=3, width=50)       
 title.place(x=170,y=5)
@@ -174,7 +195,7 @@ def run12():
     #os.system('AdminMain.py',)
     
 
-scanButton = Button(main, text="Home Page",bg="dark orange", command=run12)
+scanButton = Button(main, text="Home Page",bg="white", command=run12)
 scanButton.place(x=1400,y=200)
 scanButton.config(font=font1)
 

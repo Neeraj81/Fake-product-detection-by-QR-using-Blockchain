@@ -1,0 +1,11 @@
+h1{
+    color:#3e35ee;
+    text-align:center;
+    font: size 40px;
+    
+}
+body{
+    background-image:url("pii.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+}

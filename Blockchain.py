@@ -1,10 +1,10 @@
 from hashlib import sha256
 import json
 import time
-import pickle
+import pickle  #convert python objs to string
 from datetime import datetime
 import random
-import base64
+import base64 #used for encoding,decoding 
 from Block import *
 
 class Blockchain:
